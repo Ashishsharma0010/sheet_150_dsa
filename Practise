@@ -1,2 +1,41 @@
 # sheet_150_dsa
 Top interview asked question.
+
+// Remove Outermost Parentheses
+
+#include<bits/stdc++.h>
+using namespace std;
+class solution{
+    public:
+    string validpranthesis(string s){
+        string ans="";
+         int count=0;
+         for(int i=0; i<s.length(); i++){
+             if(s[i]=='('){
+                 if(count>0){
+                     ans.push_back(s[i]);
+                     
+                 }
+                 count++;
+             }
+             else{ //s[i]==')';
+             count--;
+             
+                 if(count>0){
+                     ans.push_back(s[i]);
+                 }
+             }
+             
+         }
+         return ans;
+        
+    }
+};
+int main(){
+    solution obj;
+   string s;
+   cin>>s;
+   string result=obj.validpranthesis(s);
+   
+    cout<<result;
+}
