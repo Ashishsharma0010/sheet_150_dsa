@@ -39,3 +39,44 @@ int main(){
    
     cout<<result;
 }
+
+
+// Q: Reverse Words in a String
+
+#include<bits/stdc++.h>
+using namespace std;
+class solution{
+    public:
+    string reverse_words(string s){
+        string ans="";
+        reverse(s.begin(),s.end());
+        for(int i=0; i<s.length(); i++){
+            string words="";
+            while(i<s.length() && s[i]!=' '){
+                words=words+s[i];
+                i++;
+            }
+            reverse(words.begin(),words.end());
+            if(words.length()>0){
+            ans=ans+" "+words;
+            }
+        }
+        return ans.substr(1);
+            
+        
+    }
+};
+int main(){
+    solution obj;
+    
+    string s;
+    getline(cin,s);
+    string ans=obj.reverse_words(s);
+    cout<<ans;
+}
+time complexity of this is O(N);
+Space complexity of this code is O(N);
+
+
+
+
