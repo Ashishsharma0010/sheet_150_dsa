@@ -77,6 +77,35 @@ int main(){
 time complexity of this is O(N);
 Space complexity of this code is O(N);
 
+// Q: Longest Common Prefix
+
+#include<bits/stdc++.h>
+using namespace std;
+class solution{
+    public:
+    string commonprefix(vector<string> strs){
+        sort(strs.begin(),strs.end());
+        string first=strs[0];
+        string last=strs[strs.size()-1];
+        string ans="";
+        for(int i=0; i<min(first.size(),last.size()); i++){
+            if(first[i]==last[i]){
+                ans+=first[i];
+            }
+            else
+            break;
+        }
+         return ans;
+    }
+   
+    
+};
+int main(){
+    solution ob;
+    vector<string> strs={"flower", "flow", "flight"};
+    cout<<ob.commonprefix(strs);
+    return 0;
+}
 
 
 
