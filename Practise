@@ -107,5 +107,35 @@ int main(){
     return 0;
 }
 
+// ROTATE STRING
+
+#include<bits/stdc++.h>
+using namespace std;
+class solution{
+public:
+bool rotate_strings(string a,string goal){
+    int n=a.size();
+    int m=goal.size();
+    if(n!=m){
+        return false;
+    }
+    if(a==goal){
+        return true;
+    }
+    if((a+a).find(goal)!=string::npos){
+        return true;
+    }
+    return false;
+}
+};
+int main(){
+    solution obj;
+    string a;
+    cin>>a;
+    string goal;
+    cin>>goal;
+    cout<<obj.rotate_strings(a,goal);
+}
+
 
 
